@@ -1,9 +1,28 @@
-
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import {AiOutlineSearch, AiOutlineShoppingCart, AiOutlineMenu} from 'react-icons/ai'
 import {LuLogIn} from 'react-icons/lu' 
+import React, {useState, useEffect} from 'react'
 
+const Navbar = () => {
+    const [nav, setnav] = useState(false)
+    const [shadow, setShadow] = useState(false)
+
+    const handleNav = () => {
+        setnav(!nav)
+    }
+
+    useEffect(() => {
+        const handleShadow = () => {
+          if (window.scrollY >= 90) {
+            setShadow(true);
+          } else {
+            setShadow(false);
+          }
+        };
+        window.addEventListener('scroll', handleShadow);
+      }, []);
 
 const navbar = () => {
   return (
@@ -43,7 +62,7 @@ const navbar = () => {
                     <AiOutlineShoppingCart size={25}/>
                     <span className='absolute right-1 top-0 rounded-full bg-red-500 px-[6px] py-[2px] text-xs text-white'>0</span>
                   </Link>
-                  <div  className='block cursor-pointer lg:hidden'>
+                  <div onClick={handleNav} className='block cursor-pointer lg:hidden'>
                   <  AiOutlineMenu size={25}/>
                   </div>
                   <div className= 'items-centers absolute min-h-screen w-screen flex-col justify-center space-y-5 bg-white text-gray-800 lg:hidden hidden'>
