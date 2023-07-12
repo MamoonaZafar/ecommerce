@@ -44,7 +44,7 @@ const navbar = () => {
                     <AiOutlineShoppingCart size={25}/>
                     <span className='absolute right-1 top-0 rounded-full bg-red-500 px-[6px] py-[2px] text-xs text-white'>0</span>
                   </Link>
-                  <div onClick={handleNav} className='block cursor-pointer lg:hidden'>
+                  <div className='block cursor-pointer lg:hidden'>
                   <  AiOutlineMenu size={25}/>
                   </div>
                   <div className= 'items-centers absolute min-h-screen w-screen flex-col justify-center space-y-5 bg-white text-gray-800 lg:hidden hidden'>
