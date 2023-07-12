@@ -1,28 +1,10 @@
-'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import {AiOutlineSearch, AiOutlineShoppingCart, AiOutlineMenu} from 'react-icons/ai'
 import {LuLogIn} from 'react-icons/lu' 
-import React, {useState, useEffect} from 'react'
 
-const Navbar = () => {
-    const [nav, setnav] = useState(false)
-    const [shadow, setShadow] = useState(false)
 
-    const handleNav = () => {
-        setnav(!nav)
-    }
-
-    useEffect(() => {
-        const handleShadow = () => {
-          if (window.scrollY >= 90) {
-            setShadow(true);
-          } else {
-            setShadow(false);
-          }
-        };
-        window.addEventListener('scroll', handleShadow);
-      }, []);
 
 const navbar = () => {
   return (
